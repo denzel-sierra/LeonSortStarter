@@ -15,6 +15,10 @@ public class Main {
 
         System.out.println(Arrays.toString(elementos));
 
-        System.out.println("Shufflesort tarda "+ shuffle_s.sort(elementos)+ " milisegundos");
+        System.out.println("ShuffleSort tarda "+ shuffle_s.sort(elementos)+ " milisegundos");
+        System.out.println("BubbleSort tarda "+ bubble_s.sort(elementos)+ " milisegundos");
+        System.out.println("MergeSort tarda "+ merge_s.sort(elementos)+ " milisegundos");
+        System.out.println("HeapSort tarda "+ heap_s.sort(elementos)+ " milisegundos");
+        //System.out.println("Shufflesort tarda "+ shuffle_s.sort(elementos)+ " milisegundos");
     }
 }
