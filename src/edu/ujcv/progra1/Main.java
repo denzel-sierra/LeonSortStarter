@@ -15,7 +15,6 @@ public class Main {
 
         System.out.println(Arrays.toString(elementos));
 
-        elementos = new int[]{3,2,4,5,6,7,9,9,10,3,5};
-        System.out.println("\n\ntarda "+ s.sort(elementos)+ " milisegundos");
+        System.out.println("Shufflesort tarda "+ shuffle_s.sort(elementos)+ " milisegundos");
     }
 }
