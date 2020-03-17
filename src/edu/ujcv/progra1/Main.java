@@ -16,7 +16,7 @@ public class Main {
                 34412797, 46072797, 18152797, 84282797, 26502797, 18552797,
                 78262797, 1542797, 61252797, 99632797, 73082797, 75312797,
                 93072797, 812797, 69192797};*/
-        int[] elementos = {2,5,8,3}
+        int[] elementos = {2,5,8,3};
         ShuffleSort shuffle_s = new ShuffleSort();
         BubleSort bubble_s = new BubleSort();
         MergeSort merge_s = new MergeSort();
