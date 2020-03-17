@@ -12,6 +12,7 @@ public class Main {
         BubleSort bubble_s = new BubleSort();
         MergeSort merge_s = new MergeSort();
         HeapSort heap_s = new HeapSort();
+        QuickSort quicksort_s = new QuickSort();
 
         System.out.println(Arrays.toString(elementos));
 
@@ -19,6 +20,6 @@ public class Main {
         System.out.println("BubbleSort tarda "+ bubble_s.sort(elementos)+ " milisegundos");
         System.out.println("MergeSort tarda "+ merge_s.sort(elementos)+ " milisegundos");
         System.out.println("HeapSort tarda "+ heap_s.sort(elementos)+ " milisegundos");
-        //System.out.println("Shufflesort tarda "+ shuffle_s.sort(elementos)+ " milisegundos");
+        System.out.println("Quicksort tarda "+ quicksort_s.sort(elementos)+ " milisegundos");
     }
 }
