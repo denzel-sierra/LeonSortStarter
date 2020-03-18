@@ -2,11 +2,11 @@ package edu.ujcv.progra1;
 
 public class QuickSort implements SortTester{
     @Override
-    public long sort(int[] array) {
-        long start = System.currentTimeMillis();
+    public double sort(int[] array) {
+        double start = System.currentTimeMillis();
         quicksort(array, 0, array.length-1);
 
-        long end = System.currentTimeMillis();
+        double end = System.currentTimeMillis();
 
         return end - start;
     }

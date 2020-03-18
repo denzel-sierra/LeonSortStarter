@@ -2,11 +2,11 @@ package edu.ujcv.progra1;
 
 public class BubleSort implements SortTester {
     @Override
-    public long sort(int[] array) {
-        long start = System.currentTimeMillis();
+    public double sort(int[] array) {
+        double start = System.currentTimeMillis();
         bubleSort(array);
 
-        long end = System.currentTimeMillis();
+        double end = System.currentTimeMillis();
 
         return end - start;
     }
