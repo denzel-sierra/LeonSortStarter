@@ -7,6 +7,8 @@ public class Main {
     public static void main(String[] args) {
         int[] elementos = {29, 44, 30, 16, 1, 24,
                 15, 20, 17, 36, 8};
+        System.out.println("Arreglo a ordenar: " + Arrays.toString(elementos));
+
         BubleSort bubble_s = new BubleSort();
         long bubble = bubble_s.sort(elementos);
         System.out.println("BubbleSort tarda "+ bubble + " nanosegundos");
@@ -30,9 +32,6 @@ public class Main {
         ShuffleSort shuffle_s = new ShuffleSort();
         long shuffle = shuffle_s.sort(elementos);
         System.out.println("ShuffleSort tarda "+ shuffle+ " nanosegundos");
-
-        System.out.println(Arrays.toString(elementos));
-
 
         long[] algoritmos = {bubble,merge,heap,quick,shuffle};
         Arrays.sort(algoritmos);
