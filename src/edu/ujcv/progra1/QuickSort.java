@@ -6,28 +6,41 @@ public class QuickSort implements SortTester{
     @Override
     public long sort(int[] array) {
         long start = System.nanoTime();
-        quicksort(array);
+        quicksort1(array);
 
         long end = System.nanoTime();
 
         return end - start;
     }
 
-    int[] quicksort(int[] arr)
-    {
-        ArrayList<Integer> izquierda = new ArrayList<>();
-        ArrayList<Integer> derecha = new ArrayList<>();
-        int pivote = arr[0];
-        for (int i=0; i<arr.length; i++){
-            if (arr[i]<pivote){
-                izquierda.add(arr[i]);
-            }else{
-                derecha.add(arr[i]);
+    public int[] quicksort1(int[] arr){
+        return quicksort2(arr,0,arr.length-1);
+    }
+    public int[] quicksort2(int[] arr, int izq, int der){
+        if(izq>=der)
+            return arr;
+        int i=izq, d=der;
+        if(izq!=der){
+            int pivote = izq;
+            int temp = 0;
+            while(izq!=der){
+                while(arr[der]>=arr[pivote] && izq<der)
+                    der--;
+                while(arr[izq]<arr[pivote] && izq<der)
+                    izq++;
+                if(der!=izq){
+                    temp = arr[der];
+                    arr[der]=arr[izq];
+                    arr[izq]=temp;
+                }
+            }
+            if(izq==der){
+                quicksort2(arr,i,izq-1);
+                quicksort2(arr,izq+1,d);
             }
         }
-        int[] ordenado = new int[izquierda.size()+derecha.size()+1];
-        System.arraycopy(izquierda.toArray(), 0, ordenado, 0, izquierda.toArray().length-1);
-        System.arraycopy(derecha.toArray(),0,ordenado,izquierda.toArray().length,ordenado.length-1);
-        return ordenado;
+        else
+            return arr;
+        return arr;
     }
 }
