@@ -3,7 +3,7 @@ package edu.ujcv.progra1;
 public class HeapSort implements SortTester {
     @Override
     public long sort(int[] array) {
-        long start = System.currentTimeMillis();
+        long start = System.nanoTime();
         heapSort(array);
 
         long end = System.currentTimeMillis();

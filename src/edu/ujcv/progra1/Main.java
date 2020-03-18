@@ -28,7 +28,7 @@ public class Main {
         System.out.println("MergeSort tarda "+ merge_s.sort(elementos)+ " milisegundos");
         System.out.println("HeapSort tarda "+ heap_s.sort(elementos)+ " milisegundos");
         System.out.println("Quicksort tarda "+ quicksort_s.sort(elementos)+ " milisegundos");
-        //System.out.println("ShuffleSort tarda "+ shuffle_s.sort(elementos)+ " milisegundos");
+        System.out.println("ShuffleSort tarda "+ shuffle_s.sort(elementos)+ " milisegundos");
         System.out.println("El algoritmo más rápido es " + compararAlgoritmos(elementos));
     }
 
@@ -52,9 +52,9 @@ public class Main {
         if (algoritmos[0]==quicksort_s.sort(arr)){
             return "QuickSort";
         }
-        //if (algoritmos[0]==shuffle_s.sort(arr)){
-        //    return "ShuffleSort";
-        //}
+        if (algoritmos[0]==shuffle_s.sort(arr)){
+            return "ShuffleSort";
+        }
         return "";
     }
 }
