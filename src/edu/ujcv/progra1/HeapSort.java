@@ -6,7 +6,7 @@ public class HeapSort implements SortTester {
         long start = System.nanoTime();
         heapSort(array);
 
-        long end = System.currentTimeMillis();
+        long end = System.nanoTime();
 
         return end - start;
     }

@@ -6,7 +6,7 @@ public class MergeSort  implements SortTester{
         long start = System.nanoTime();
         mergeSort(array);
 
-        long end = System.currentTimeMillis();
+        long end = System.nanoTime();
 
         return end - start;
     }
