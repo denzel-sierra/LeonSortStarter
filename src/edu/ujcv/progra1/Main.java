@@ -5,8 +5,6 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-
         int[] elementos = {27972797, 9712797, 34362797, 62502797, 2212797,
                 68932797, 33732797, 73432797, 2052797, 29862797, 91222797,
                 85942797, 4692797, 87532797, 33872797, 84462797, 20272797,
@@ -24,11 +22,11 @@ public class Main {
 
         System.out.println(Arrays.toString(elementos));
 
-        System.out.println("BubbleSort tarda "+ bubble_s.sort(elementos) + " milisegundos");
-        System.out.println("MergeSort tarda "+ merge_s.sort(elementos)+ " milisegundos");
-        System.out.println("HeapSort tarda "+ heap_s.sort(elementos)+ " milisegundos");
-        System.out.println("Quicksort tarda "+ quicksort_s.sort(elementos)+ " milisegundos");
-        System.out.println("ShuffleSort tarda "+ shuffle_s.sort(elementos)+ " milisegundos");
+        System.out.println("BubbleSort tarda "+ bubble_s.sort(elementos) + " nanosegundos");
+        System.out.println("MergeSort tarda "+ merge_s.sort(elementos)+ " nanosegundos");
+        System.out.println("HeapSort tarda "+ heap_s.sort(elementos)+ " nanosegundos");
+        System.out.println("Quicksort tarda "+ quicksort_s.sort(elementos)+ " nanosegundos");
+        System.out.println("ShuffleSort tarda "+ shuffle_s.sort(elementos)+ " nanosegundos");
         System.out.println("El algoritmo más rápido es " + compararAlgoritmos(elementos));
     }
 
