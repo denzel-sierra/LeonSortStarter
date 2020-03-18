@@ -7,22 +7,18 @@ public class Main {
     public static void main(String[] args) {
         int[] elementos = {29, 44, 30, 16, 1, 24,
                 15, 20, 17, 36, 8};
-        /*ShuffleSort shuffle_s = new ShuffleSort();
+        ShuffleSort shuffle_s = new ShuffleSort();
         BubleSort bubble_s = new BubleSort();
         MergeSort merge_s = new MergeSort();
         HeapSort heap_s = new HeapSort();
-        */
         QuickSort quicksort_s = new QuickSort();
-        /*
         long bubble = bubble_s.sort(elementos);
         elementos = new  int[]{29, 44, 30, 16, 1, 24, 15, 20, 17, 36, 8};
         long merge = merge_s.sort(elementos);
         elementos = new  int[]{29, 44, 30, 16, 1, 24, 15, 20, 17, 36, 8};
         long heap = heap_s.sort(elementos);
         elementos = new  int[]{29, 44, 30, 16, 1, 24, 15, 20, 17, 36, 8};
-        */
         long quick = quicksort_s.sort(elementos);
-        /*
         elementos = new  int[]{29, 44, 30, 16, 1, 24, 15, 20, 17, 36, 8};
         long shuffle = shuffle_s.sort(elementos);
 
@@ -51,7 +47,7 @@ public class Main {
         }
         if (algoritmos[0]==shuffle){
             System.out.println("El algoritmo más rápido es ShuffleSort?");
-        }*/
+        }
 
 
     }
