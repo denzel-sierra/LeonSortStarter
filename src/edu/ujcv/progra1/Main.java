@@ -7,28 +7,32 @@ public class Main {
     public static void main(String[] args) {
         int[] elementos = {29, 44, 30, 16, 1, 24,
                 15, 20, 17, 36, 8};
-        ShuffleSort shuffle_s = new ShuffleSort();
         BubleSort bubble_s = new BubleSort();
-        MergeSort merge_s = new MergeSort();
-        HeapSort heap_s = new HeapSort();
-        QuickSort quicksort_s = new QuickSort();
         long bubble = bubble_s.sort(elementos);
+        System.out.println("BubbleSort tarda "+ bubble + " nanosegundos");
         elementos = new  int[]{29, 44, 30, 16, 1, 24, 15, 20, 17, 36, 8};
+
+        MergeSort merge_s = new MergeSort();
         long merge = merge_s.sort(elementos);
+        System.out.println("MergeSort tarda "+ merge + " nanosegundos");
         elementos = new  int[]{29, 44, 30, 16, 1, 24, 15, 20, 17, 36, 8};
+
+        HeapSort heap_s = new HeapSort();
         long heap = heap_s.sort(elementos);
+        System.out.println("HeapSort tarda "+ heap+ " nanosegundos");
         elementos = new  int[]{29, 44, 30, 16, 1, 24, 15, 20, 17, 36, 8};
+
+        QuickSort quicksort_s = new QuickSort();
         long quick = quicksort_s.sort(elementos);
+        System.out.println("Quicksort tarda "+ quick+ " nanosegundos");
         elementos = new  int[]{29, 44, 30, 16, 1, 24, 15, 20, 17, 36, 8};
+
+        ShuffleSort shuffle_s = new ShuffleSort();
         long shuffle = shuffle_s.sort(elementos);
+        System.out.println("ShuffleSort tarda "+ shuffle+ " nanosegundos");
 
         System.out.println(Arrays.toString(elementos));
 
-        System.out.println("BubbleSort tarda "+ bubble + " nanosegundos");
-        System.out.println("MergeSort tarda "+ merge + " nanosegundos");
-        System.out.println("HeapSort tarda "+ heap+ " nanosegundos");
-        System.out.println("Quicksort tarda "+ quick+ " nanosegundos");
-        System.out.println("ShuffleSort tarda "+ shuffle+ " nanosegundos");
 
         long[] algoritmos = {bubble,merge,heap,quick,shuffle};
         Arrays.sort(algoritmos);
