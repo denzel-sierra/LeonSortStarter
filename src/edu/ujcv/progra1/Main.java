@@ -6,47 +6,45 @@ public class Main {
 
     public static void main(String[] args) {
         int[] elementos = {29, 44, 30, 16, 1, 24,
-                4, 18, 5, 3, 40, 11, 37, 34, 32,
                 15, 20, 17, 36, 8};
         ShuffleSort shuffle_s = new ShuffleSort();
         BubleSort bubble_s = new BubleSort();
         MergeSort merge_s = new MergeSort();
         HeapSort heap_s = new HeapSort();
         QuickSort quicksort_s = new QuickSort();
+        long bubble = bubble_s.sort(elementos);
+        long merge = merge_s.sort(elementos);
+        long heap = heap_s.sort(elementos);
+        long quick = quicksort_s.sort(elementos);
+        long shuffle = shuffle_s.sort(elementos);
 
         System.out.println(Arrays.toString(elementos));
 
-        System.out.println("BubbleSort tarda "+ bubble_s.sort(elementos) + " nanosegundos");
-        System.out.println("MergeSort tarda "+ merge_s.sort(elementos)+ " nanosegundos");
-        System.out.println("HeapSort tarda "+ heap_s.sort(elementos)+ " nanosegundos");
-        System.out.println("Quicksort tarda "+ quicksort_s.sort(elementos)+ " nanosegundos");
-        System.out.println("ShuffleSort tarda "+ shuffle_s.sort(elementos)+ " nanosegundos");
-        System.out.println("El algoritmo más rápido es " + compararAlgoritmos(elementos));
+        System.out.println("BubbleSort tarda "+ bubble + " nanosegundos");
+        System.out.println("MergeSort tarda "+ merge + " nanosegundos");
+        System.out.println("HeapSort tarda "+ heap+ " nanosegundos");
+        System.out.println("Quicksort tarda "+ quick+ " nanosegundos");
+        System.out.println("ShuffleSort tarda "+ shuffle+ " nanosegundos");
+
+        long[] algoritmos = {bubble,merge,heap,quick,shuffle};
+        Arrays.sort(algoritmos);
+
+        if (algoritmos[0]==bubble){
+            System.out.println("El algoritmo más rápido es BubbleSort");
+        }
+        if (algoritmos[0]==merge){
+            System.out.println("El algoritmo más rápido es MergeSort");
+        }
+        if (algoritmos[0]==heap){
+            System.out.println("El algoritmo más rápido es HeapSort");
+        }
+        if (algoritmos[0]==quick){
+            System.out.println("El algoritmo más rápido es QuickSort");
+        }
+        if (algoritmos[0]==shuffle){
+            System.out.println("El algoritmo más rápido es ShuffleSort?");
+        }
+
     }
 
-    private static String compararAlgoritmos(int[] arr) {
-        ShuffleSort shuffle_s = new ShuffleSort();
-        BubleSort bubble_s = new BubleSort();
-        MergeSort merge_s = new MergeSort();
-        HeapSort heap_s = new HeapSort();
-        QuickSort quicksort_s = new QuickSort();
-        long[] algoritmos = {bubble_s.sort(arr), merge_s.sort(arr), heap_s.sort(arr), quicksort_s.sort(arr)};
-        Arrays.sort(algoritmos);
-        if (algoritmos[0]==bubble_s.sort(arr)){
-            return "BubbleSort";
-        }
-        if (algoritmos[0]==merge_s.sort(arr)){
-            return "MergeSort";
-        }
-        if (algoritmos[0]==heap_s.sort(arr)){
-            return "HeapSort";
-        }
-        if (algoritmos[0]==quicksort_s.sort(arr)){
-            return "QuickSort";
-        }
-        if (algoritmos[0]==shuffle_s.sort(arr)){
-            return "ShuffleSort";
-        }
-        return "";
-    }
 }
