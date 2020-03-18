@@ -38,7 +38,7 @@ public class Main {
         MergeSort merge_s = new MergeSort();
         HeapSort heap_s = new HeapSort();
         QuickSort quicksort_s = new QuickSort();
-        double[] algoritmos = {bubble_s.sort(arr), merge_s.sort(arr), heap_s.sort(arr), quicksort_s.sort(arr)};
+        long[] algoritmos = {bubble_s.sort(arr), merge_s.sort(arr), heap_s.sort(arr), quicksort_s.sort(arr)};
         Arrays.sort(algoritmos);
         if (algoritmos[0]==bubble_s.sort(arr)){
             return "BubbleSort";

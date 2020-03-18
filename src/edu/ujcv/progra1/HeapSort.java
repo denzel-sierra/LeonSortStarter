@@ -2,11 +2,11 @@ package edu.ujcv.progra1;
 
 public class HeapSort implements SortTester {
     @Override
-    public double sort(int[] array) {
-        double start = System.currentTimeMillis();
+    public long sort(int[] array) {
+        long start = System.currentTimeMillis();
         heapSort(array);
 
-        double end = System.currentTimeMillis();
+        long end = System.currentTimeMillis();
 
         return end - start;
     }

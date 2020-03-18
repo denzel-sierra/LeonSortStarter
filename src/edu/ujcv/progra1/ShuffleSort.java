@@ -5,11 +5,11 @@ import java.util.Random;
 
 public class ShuffleSort implements SortTester {
     @Override
-    public double sort(int[] array) {
-        double start = System.currentTimeMillis();
+    public long sort(int[] array) {
+        long start = System.currentTimeMillis();
         shuffleSort(array);
 
-        double end = System.currentTimeMillis();
+        long end = System.currentTimeMillis();
 
         return end - start;
     }
