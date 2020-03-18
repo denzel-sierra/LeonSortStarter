@@ -1,43 +1,33 @@
 package edu.ujcv.progra1;
 
+import java.util.ArrayList;
+
 public class QuickSort implements SortTester{
     @Override
     public long sort(int[] array) {
         long start = System.nanoTime();
-        quicksort(array, 0, array.length-1);
+        quicksort(array);
 
         long end = System.nanoTime();
 
         return end - start;
     }
 
-    int partition(int arr[], int low, int high)
+    int[] quicksort(int[] arr)
     {
-        int pivot = arr[high];
-        int i = (low-1);
-        for (int j=low; j<high; j++)
-        {
-            if (arr[j] < pivot)
-            {
-                i++;
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
+        ArrayList<Integer> izquierda = new ArrayList<>();
+        ArrayList<Integer> derecha = new ArrayList<>();
+        int pivote = arr[0];
+        for (int i=0; i<arr.length; i++){
+            if (arr[i]<pivote){
+                izquierda.add(arr[i]);
+            }else{
+                derecha.add(arr[i]);
             }
         }
-        int temp = arr[i+1];
-        arr[i+1] = arr[high];
-        arr[high] = temp;
-        return i+1;
-    }
-
-    void quicksort(int arr[], int low, int high)
-    {
-        if (low < high)
-        {
-            int pi = partition(arr, low, high);
-            quicksort(arr, low, pi-1);
-            quicksort(arr, pi+1, high);
-        }
+        int[] ordenado = new int[izquierda.size()+derecha.size()+1];
+        System.arraycopy(izquierda.toArray(), 0, ordenado, 0, izquierda.toArray().length-1);
+        System.arraycopy(derecha.toArray(),0,ordenado,izquierda.toArray().length,ordenado.length-1);
+        return ordenado;
     }
 }
