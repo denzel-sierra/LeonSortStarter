@@ -1,55 +1,37 @@
 package edu.ujcv.progra1;
 
-public class QuickSort implements SortTester {
+public class QuickSort implements SortTester{
     @Override
     public long sort(int[] array) {
         long start = System.currentTimeMillis();
-        quicksort(array, 0, array.length - 1);
+        quicksort1(array);
 
         long end = System.currentTimeMillis();
 
         return end - start;
     }
 
-    int partition(int arr[], int low, int high) {
-        int pivot = arr[high];
-        int i = (low - 1); // index of smaller element
-        for (int j = low; j < high; j++) {
-            // If current element is smaller than the pivot
-            if (arr[j] < pivot) {
-                i++;
-
-                // swap arr[i] and arr[j]
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
+    public void quicksort1(int[] arr){
+        quicksort2(arr, 0, arr.length - 1);
+    }
+    public void quicksort2(int[] arr, int izq, int der){
+        if(izq>=der)
+            return;
+        int i=izq, d=der;
+        int pivote = izq;
+        int temp = 0;
+        while(izq!=der){
+            while(arr[der]>=arr[pivote] && izq<der)
+                der--;
+            while(arr[izq]<arr[pivote] && izq<der)
+                izq++;
+            if(der!=izq){
+                temp = arr[der];
+                arr[der]=arr[izq];
+                arr[izq]=temp;
             }
         }
-
-        // swap arr[i+1] and arr[high] (or pivot)
-        int temp = arr[i + 1];
-        arr[i + 1] = arr[high];
-        arr[high] = temp;
-
-        return i + 1;
-    }
-
-
-    /* The main function that implements QuickSort()
-      arr[] --> Array to be sorted,
-      low  --> Starting index,
-      high  --> Ending index */
-    void quicksort(int arr[], int low, int high) {
-        if (low < high) {
-            /* pi is partitioning index, arr[pi] is
-              now at right place */
-            int pi = partition(arr, low, high);
-
-            // Recursively sort elements before
-            // partition and after partition
-            quicksort(arr, low, pi - 1);
-            quicksort(arr, pi + 1, high);
-        }
-
+        quicksort2(arr,i,izq-1);
+        quicksort2(arr,izq+1,d);
     }
 }
