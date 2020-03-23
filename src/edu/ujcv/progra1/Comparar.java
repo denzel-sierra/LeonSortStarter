@@ -1,6 +1,7 @@
 package edu.ujcv.progra1;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Comparar {
 
@@ -32,19 +33,19 @@ public class Comparar {
         QuickSort quicksort_s = new QuickSort();
         Random random = new Random();
 
-        int tamaño = 50000;
+        int tamaño = 10;
         int rango = 1000;
 
-        int[] arreglo1 = new int[random.nextInt(tamaño)];
-        int[] arreglo2 = new int[random.nextInt(tamaño)];
-        int[] arrelgo3 = new int[random.nextInt(tamaño)];
-        int[] arreglo4 = new int[random.nextInt(tamaño)];
-        int[] arreglo5 = new int[random.nextInt(tamaño)];
-        int[] arreglo6 = new int[random.nextInt(tamaño)];
-        int[] arreglo7 = new int[random.nextInt(tamaño)];
-        int[] arreglo8 = new int[random.nextInt(tamaño)];
-        int[] arreglo9 = new int[random.nextInt(tamaño)];
-        int[] arreglo10 = new int[random.nextInt(tamaño)];
+        int[] arreglo1 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
+        int[] arreglo2 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
+        int[] arrelgo3 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
+        int[] arreglo4 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
+        int[] arreglo5 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
+        int[] arreglo6 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
+        int[] arreglo7 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
+        int[] arreglo8 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
+        int[] arreglo9 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
+        int[] arreglo10 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
 
         for (int i = 0; i < 10; i++) {
             arreglo1[i] = random.nextInt(rango);
