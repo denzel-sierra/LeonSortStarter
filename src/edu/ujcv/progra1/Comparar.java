@@ -12,16 +12,16 @@ public class Comparar {
             }
         }
         if (min == arr[0]){
-            System.out.println("El algoritmo más rápido es BubbleSort");
+            System.out.println("El algoritmo más rápido fue BubbleSort");
         }
         if (min == arr[1]){
-            System.out.println("El algoritmo más rápido es MergeSort");
+            System.out.println("El algoritmo más rápido fue MergeSort");
         }
         if (min == arr[2]){
-            System.out.println("El algoritmo más rápido es HeapSort");
+            System.out.println("El algoritmo más rápido fue HeapSort");
         }
         if (min == arr[3]){
-            System.out.println("El algoritmo más rápido es QuickSort");
+            System.out.println("El algoritmo más rápido fue QuickSort");
         }
     }
 
