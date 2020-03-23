@@ -25,7 +25,7 @@ public class Comparar {
         }
     }
 
-    public static long[] promediar() {
+    public static long[] compararArreglos() {
         BubleSort bubble_s = new BubleSort();
         MergeSort merge_s = new MergeSort();
         HeapSort heap_s = new HeapSort();
@@ -128,7 +128,7 @@ public class Comparar {
     }
 
     private static int[] generarArreglo() {
-        int tamaño = 10;
+        int tamaño = 50000;
         int rango = 1000;
         Random random = new Random();
         int[] arreglo = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
