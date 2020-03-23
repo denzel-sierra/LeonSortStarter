@@ -32,7 +32,7 @@ public class Comparar {
         QuickSort quicksort_s = new QuickSort();
         Random random = new Random();
 
-        int tamaño = 20000;
+        int tamaño = 50000;
         int rango = 1000;
 
         int[] arreglo1 = new int[random.nextInt(tamaño)];

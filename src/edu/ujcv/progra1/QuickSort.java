@@ -11,35 +11,35 @@ public class QuickSort implements SortTester{
         return end - start;
     }
 
-    public void quicksort(int[] A) {
-        if (A == null || A.length == 0)
+    public void quicksort(int[] arr) {
+        if (arr == null || arr.length == 0)
             return;
-        quicksort(A, 0, A.length - 1);
+        quicksort(arr, 0, arr.length - 1);
     }
 
-    public void quicksort(int[] A, int left, int right) {
-        int pivot = A[left + (right - left) / 2];
-        int i = left;
-        int j = right;
-        while (i <= j) {
-            while (A[i] < pivot) {
-                i++;
+    public void quicksort(int[] arr, int izquierda, int derecha) {
+        int pivote = arr[izquierda + (derecha - izquierda) / 2];
+        int izq = izquierda;
+        int der = derecha;
+        while (izq <= der) {
+            while (arr[izq] < pivote) {
+                izq++;
             }
-            while (A[j] > pivot) {
-                j--;
+            while (arr[der] > pivote) {
+                der--;
             }
-            if (i <= j) {
-                int temp=A[i];
-                A[i]=A[j];
-                A[j]=temp;;
-                i++;
-                j--;
+            if (izq <= der) {
+                int temp=arr[izq];
+                arr[izq]=arr[der];
+                arr[der]=temp;;
+                izq++;
+                der--;
             }
         }
 
-        if(left < j)
-            quicksort(A,left,j);
-        if(i < right)
-            quicksort(A,i,right);
+        if(izquierda < der)
+            quicksort(arr,izquierda,der);
+        if(izq < derecha)
+            quicksort(arr,izq,derecha);
     }
 }
