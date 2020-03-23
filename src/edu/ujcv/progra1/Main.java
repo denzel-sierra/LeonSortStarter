@@ -1,5 +1,4 @@
 package edu.ujcv.progra1;
-import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -10,7 +9,7 @@ public class Main {
         System.out.println("Promedio de MergeSort: " + promedios[1]);
         System.out.println("Promedio de HeapSort: " + promedios[2]);
         System.out.println("Promedio de QuickSort: " + promedios[3]);
-        System.out.println("");
+        System.out.println();
         masRapido(promedios);
 
     }
@@ -68,7 +67,6 @@ public class Main {
             arreglo8[i] = random.nextInt(rango);
             arreglo9[i] = random.nextInt(rango);
             arreglo10[i] = random.nextInt(rango);
-            ;
         }
 
         long[] tiempo = new long[10];
@@ -85,7 +83,7 @@ public class Main {
         tiempo[9] = bubble_s.sort(arreglo10);
 
         long suma = 0;
-        long promBubble = 0;
+        long promBubble;
 
         for (int i = 0; i < 10; i++){
             suma += tiempo[i];
@@ -105,7 +103,7 @@ public class Main {
         tiempo[9] = merge_s.sort(arreglo10);
 
         suma = 0;
-        long promMerge = 0;
+        long promMerge;
 
         for (int i = 0; i < 10; i++){
             suma += tiempo[i];
@@ -125,11 +123,13 @@ public class Main {
         tiempo[9] = heap_s.sort(arreglo10);
 
         suma = 0;
-        long promHeap = 0;
+        long promHeap;
 
         for (int i = 0; i < 10; i++){
             suma += tiempo[i];
         }
+
+        promHeap = suma/10;
 
         tiempo[0] = quicksort_s.sort(arreglo1);
         tiempo[1] = quicksort_s.sort(arreglo2);
@@ -143,7 +143,7 @@ public class Main {
         tiempo[9] = quicksort_s.sort(arreglo10);
 
         suma = 0;
-        long promQuick = 0;
+        long promQuick;
 
         for (int i = 0; i < 10; i++){
             suma += tiempo[i];
@@ -151,8 +151,7 @@ public class Main {
 
         promQuick = suma/10;
 
-        long[] algoritmos = {promBubble, promMerge, promHeap, promQuick};
-        return algoritmos;
+        return new long[]{promBubble, promMerge, promHeap, promQuick};
     }
 
 
