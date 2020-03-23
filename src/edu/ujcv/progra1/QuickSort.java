@@ -4,34 +4,42 @@ public class QuickSort implements SortTester{
     @Override
     public long sort(int[] array) {
         long start = System.currentTimeMillis();
-        quicksort1(array);
+        quicksort(array);
 
         long end = System.currentTimeMillis();
 
         return end - start;
     }
 
-    public void quicksort1(int[] arr){
-        quicksort2(arr, 0, arr.length - 1);
-    }
-    public void quicksort2(int[] arr, int izq, int der){
-        if(izq>=der)
+    public void quicksort(int[] A) {
+        if (A == null || A.length == 0)
             return;
-        int i=izq, d=der;
-        int pivote = izq;
-        int temp = 0;
-        while(izq!=der){
-            while(arr[der]>=arr[pivote] && izq<der)
-                der--;
-            while(arr[izq]<arr[pivote] && izq<der)
-                izq++;
-            if(der!=izq){
-                temp = arr[der];
-                arr[der]=arr[izq];
-                arr[izq]=temp;
+        quicksort(A, 0, A.length - 1);
+    }
+
+    public void quicksort(int[] A, int left, int right) {
+        int pivot = A[left + (right - left) / 2];
+        int i = left;
+        int j = right;
+        while (i <= j) {
+            while (A[i] < pivot) {
+                i++;
+            }
+            while (A[j] > pivot) {
+                j--;
+            }
+            if (i <= j) {
+                int temp=A[i];
+                A[i]=A[j];
+                A[j]=temp;;
+                i++;
+                j--;
             }
         }
-        quicksort2(arr,i,izq-1);
-        quicksort2(arr,izq+1,d);
+
+        if(left < j)
+            quicksort(A,left,j);
+        if(i < right)
+            quicksort(A,i,right);
     }
 }
