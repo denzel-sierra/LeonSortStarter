@@ -1,5 +1,4 @@
 package edu.ujcv.progra1;
-
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -31,34 +30,17 @@ public class Comparar {
         MergeSort merge_s = new MergeSort();
         HeapSort heap_s = new HeapSort();
         QuickSort quicksort_s = new QuickSort();
-        Random random = new Random();
 
-        int tamaño = 10;
-        int rango = 1000;
-
-        int[] arreglo1 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
-        int[] arreglo2 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
-        int[] arrelgo3 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
-        int[] arreglo4 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
-        int[] arreglo5 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
-        int[] arreglo6 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
-        int[] arreglo7 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
-        int[] arreglo8 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
-        int[] arreglo9 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
-        int[] arreglo10 = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
-
-        for (int i = 0; i < 10; i++) {
-            arreglo1[i] = random.nextInt(rango);
-            arreglo2[i] = random.nextInt(rango);
-            arrelgo3[i] = random.nextInt(rango);
-            arreglo4[i] = random.nextInt(rango);
-            arreglo5[i] = random.nextInt(rango);
-            arreglo6[i] = random.nextInt(rango);
-            arreglo7[i] = random.nextInt(rango);
-            arreglo8[i] = random.nextInt(rango);
-            arreglo9[i] = random.nextInt(rango);
-            arreglo10[i] = random.nextInt(rango);
-        }
+        int[] arreglo1 = generarArreglo();
+        int[] arreglo2 = generarArreglo();
+        int[] arrelgo3 = generarArreglo();
+        int[] arreglo4 = generarArreglo();
+        int[] arreglo5 = generarArreglo();
+        int[] arreglo6 = generarArreglo();
+        int[] arreglo7 = generarArreglo();
+        int[] arreglo8 = generarArreglo();
+        int[] arreglo9 = generarArreglo();
+        int[] arreglo10 = generarArreglo();
 
         long[] tiempo = new long[10];
 
@@ -143,6 +125,17 @@ public class Comparar {
         promQuick = suma/10;
 
         return new long[]{promBubble, promMerge, promHeap, promQuick};
+    }
+
+    private static int[] generarArreglo() {
+        int tamaño = 10;
+        int rango = 1000;
+        Random random = new Random();
+        int[] arreglo = new int[ThreadLocalRandom.current().nextInt(5, tamaño)];
+        for (int i = 0; i < arreglo.length; i++) {
+            arreglo[i] = random.nextInt(rango);
+        }
+        return arreglo;
     }
 
 
