@@ -29,11 +29,11 @@ public class Main {
         System.out.println("Quicksort tarda "+ quick+ " nanosegundos");
         elementos = new  int[]{29, 44, 30, 16, 1, 24, 15, 20, 17, 36, 8};
 
-        ShuffleSort shuffle_s = new ShuffleSort();
+/*        ShuffleSort shuffle_s = new ShuffleSort();
         long shuffle = shuffle_s.sort(elementos);
-        System.out.println("ShuffleSort tarda "+ shuffle+ " nanosegundos");
+        System.out.println("ShuffleSort tarda "+ shuffle+ " nanosegundos");*/
 
-        long[] algoritmos = {bubble,merge,heap,quick,shuffle};
+        long[] algoritmos = {bubble,merge,heap,quick};
         Arrays.sort(algoritmos);
 
         if (algoritmos[0]==bubble){
@@ -48,9 +48,9 @@ public class Main {
         if (algoritmos[0]==quick){
             System.out.println("El algoritmo más rápido es QuickSort");
         }
-        if (algoritmos[0]==shuffle){
+/*        if (algoritmos[0]==shuffle){
             System.out.println("El algoritmo más rápido es ShuffleSort?");
-        }
+        }*/
 
 
     }
