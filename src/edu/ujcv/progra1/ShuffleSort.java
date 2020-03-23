@@ -6,10 +6,10 @@ import java.util.Random;
 public class ShuffleSort implements SortTester {
     @Override
     public long sort(int[] array) {
-        long start = System.nanoTime();
+        long start = System.currentTimeMillis();
         shuffleSort(array);
 
-        long end = System.nanoTime();
+        long end = System.currentTimeMillis();
 
         return end - start;
     }

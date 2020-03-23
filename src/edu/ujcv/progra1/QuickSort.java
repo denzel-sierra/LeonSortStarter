@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class QuickSort implements SortTester{
     @Override
     public long sort(int[] array) {
-        long start = System.nanoTime();
+        long start = System.currentTimeMillis();
         quicksort1(array);
 
-        long end = System.nanoTime();
+        long end = System.currentTimeMillis();
 
         return end - start;
     }
