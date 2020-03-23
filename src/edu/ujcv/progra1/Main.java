@@ -1,6 +1,4 @@
 package edu.ujcv.progra1;
-
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -18,18 +16,22 @@ public class Main {
     }
 
     private static void masRapido(long[] arr) {
-        long[] temp = arr;
-        Arrays.sort(arr);
-        if (arr[0]==temp[0]){
+        long min = arr[0];
+        for (int i=0; i<arr.length-1; i++){
+            if (arr[i]<min){
+                min = arr[i];
+            }
+        }
+        if (min == arr[0]){
             System.out.println("El algoritmo más rápido es BubbleSort");
         }
-        if (arr[0]==temp[1]){
+        if (min == arr[1]){
             System.out.println("El algoritmo más rápido es MergeSort");
         }
-        if (arr[0]==temp[2]){
+        if (min == arr[2]){
             System.out.println("El algoritmo más rápido es HeapSort");
         }
-        if (arr[0]==temp[3]){
+        if (min == arr[3]){
             System.out.println("El algoritmo más rápido es QuickSort");
         }
     }
@@ -41,43 +43,46 @@ public class Main {
         QuickSort quicksort_s = new QuickSort();
         Random random = new Random();
 
-        int[] arr1 = new int[random.nextInt(10000)];
-        int[] arr2 = new int[random.nextInt(10000)];
-        int[] arr3 = new int[random.nextInt(10000)];
-        int[] arr4 = new int[random.nextInt(10000)];
-        int[] arr5 = new int[random.nextInt(10000)];
-        int[] arr6 = new int[random.nextInt(10000)];
-        int[] arr7 = new int[random.nextInt(10000)];
-        int[] arr8 = new int[random.nextInt(10000)];
-        int[] arr9 = new int[random.nextInt(10000)];
-        int[] arr10 = new int[random.nextInt(10000)];
+        int tamaño = 10000;
+        int rango = 1000;
+
+        int[] arreglo1 = new int[random.nextInt(tamaño)];
+        int[] arreglo2 = new int[random.nextInt(tamaño)];
+        int[] arrelgo3 = new int[random.nextInt(tamaño)];
+        int[] arreglo4 = new int[random.nextInt(tamaño)];
+        int[] arreglo5 = new int[random.nextInt(tamaño)];
+        int[] arreglo6 = new int[random.nextInt(tamaño)];
+        int[] arreglo7 = new int[random.nextInt(tamaño)];
+        int[] arreglo8 = new int[random.nextInt(tamaño)];
+        int[] arreglo9 = new int[random.nextInt(tamaño)];
+        int[] arreglo10 = new int[random.nextInt(tamaño)];
 
         for (int i = 0; i < 10; i++) {
-            arr1[i] = random.nextInt(1000);
-            arr2[i] = random.nextInt(1000);
-            arr3[i] = random.nextInt(1000);
-            arr4[i] = random.nextInt(1000);
-            arr5[i] = random.nextInt(1000);
-            arr6[i] = random.nextInt(1000);
-            arr7[i] = random.nextInt(1000);
-            arr8[i] = random.nextInt(1000);
-            arr9[i] = random.nextInt(1000);
-            arr10[i] = random.nextInt(1000);
+            arreglo1[i] = random.nextInt(rango);
+            arreglo2[i] = random.nextInt(rango);
+            arrelgo3[i] = random.nextInt(rango);
+            arreglo4[i] = random.nextInt(rango);
+            arreglo5[i] = random.nextInt(rango);
+            arreglo6[i] = random.nextInt(rango);
+            arreglo7[i] = random.nextInt(rango);
+            arreglo8[i] = random.nextInt(rango);
+            arreglo9[i] = random.nextInt(rango);
+            arreglo10[i] = random.nextInt(rango);
             ;
         }
 
         long[] tiempo = new long[10];
 
-        tiempo[0] = bubble_s.sort(arr1);
-        tiempo[1] = bubble_s.sort(arr2);
-        tiempo[2] = bubble_s.sort(arr3);
-        tiempo[3] = bubble_s.sort(arr4);
-        tiempo[4] = bubble_s.sort(arr5);
-        tiempo[5] = bubble_s.sort(arr6);
-        tiempo[6] = bubble_s.sort(arr7);
-        tiempo[7] = bubble_s.sort(arr8);
-        tiempo[8] = bubble_s.sort(arr9);
-        tiempo[9] = bubble_s.sort(arr10);
+        tiempo[0] = bubble_s.sort(arreglo1);
+        tiempo[1] = bubble_s.sort(arreglo2);
+        tiempo[2] = bubble_s.sort(arrelgo3);
+        tiempo[3] = bubble_s.sort(arreglo4);
+        tiempo[4] = bubble_s.sort(arreglo5);
+        tiempo[5] = bubble_s.sort(arreglo6);
+        tiempo[6] = bubble_s.sort(arreglo7);
+        tiempo[7] = bubble_s.sort(arreglo8);
+        tiempo[8] = bubble_s.sort(arreglo9);
+        tiempo[9] = bubble_s.sort(arreglo10);
 
         long suma = 0;
         long promBubble = 0;
@@ -88,16 +93,16 @@ public class Main {
 
         promBubble = suma/10;
 
-        tiempo[0] = merge_s.sort(arr1);
-        tiempo[1] = merge_s.sort(arr2);
-        tiempo[2] = merge_s.sort(arr3);
-        tiempo[3] = merge_s.sort(arr4);
-        tiempo[4] = merge_s.sort(arr5);
-        tiempo[5] = merge_s.sort(arr6);
-        tiempo[6] = merge_s.sort(arr7);
-        tiempo[7] = merge_s.sort(arr8);
-        tiempo[8] = merge_s.sort(arr9);
-        tiempo[9] = merge_s.sort(arr10);
+        tiempo[0] = merge_s.sort(arreglo1);
+        tiempo[1] = merge_s.sort(arreglo2);
+        tiempo[2] = merge_s.sort(arrelgo3);
+        tiempo[3] = merge_s.sort(arreglo4);
+        tiempo[4] = merge_s.sort(arreglo5);
+        tiempo[5] = merge_s.sort(arreglo6);
+        tiempo[6] = merge_s.sort(arreglo7);
+        tiempo[7] = merge_s.sort(arreglo8);
+        tiempo[8] = merge_s.sort(arreglo9);
+        tiempo[9] = merge_s.sort(arreglo10);
 
         suma = 0;
         long promMerge = 0;
@@ -108,16 +113,16 @@ public class Main {
 
         promMerge = suma/10;
 
-        tiempo[0] = heap_s.sort(arr1);
-        tiempo[1] = heap_s.sort(arr2);
-        tiempo[2] = heap_s.sort(arr3);
-        tiempo[3] = heap_s.sort(arr4);
-        tiempo[4] = heap_s.sort(arr5);
-        tiempo[5] = heap_s.sort(arr6);
-        tiempo[6] = heap_s.sort(arr7);
-        tiempo[7] = heap_s.sort(arr8);
-        tiempo[8] = heap_s.sort(arr9);
-        tiempo[9] = heap_s.sort(arr10);
+        tiempo[0] = heap_s.sort(arreglo1);
+        tiempo[1] = heap_s.sort(arreglo2);
+        tiempo[2] = heap_s.sort(arrelgo3);
+        tiempo[3] = heap_s.sort(arreglo4);
+        tiempo[4] = heap_s.sort(arreglo5);
+        tiempo[5] = heap_s.sort(arreglo6);
+        tiempo[6] = heap_s.sort(arreglo7);
+        tiempo[7] = heap_s.sort(arreglo8);
+        tiempo[8] = heap_s.sort(arreglo9);
+        tiempo[9] = heap_s.sort(arreglo10);
 
         suma = 0;
         long promHeap = 0;
@@ -126,16 +131,16 @@ public class Main {
             suma += tiempo[i];
         }
 
-        tiempo[0] = quicksort_s.sort(arr1);
-        tiempo[1] = quicksort_s.sort(arr2);
-        tiempo[2] = quicksort_s.sort(arr3);
-        tiempo[3] = quicksort_s.sort(arr4);
-        tiempo[4] = quicksort_s.sort(arr5);
-        tiempo[5] = quicksort_s.sort(arr6);
-        tiempo[6] = quicksort_s.sort(arr7);
-        tiempo[7] = quicksort_s.sort(arr8);
-        tiempo[8] = quicksort_s.sort(arr9);
-        tiempo[9] = quicksort_s.sort(arr10);
+        tiempo[0] = quicksort_s.sort(arreglo1);
+        tiempo[1] = quicksort_s.sort(arreglo2);
+        tiempo[2] = quicksort_s.sort(arrelgo3);
+        tiempo[3] = quicksort_s.sort(arreglo4);
+        tiempo[4] = quicksort_s.sort(arreglo5);
+        tiempo[5] = quicksort_s.sort(arreglo6);
+        tiempo[6] = quicksort_s.sort(arreglo7);
+        tiempo[7] = quicksort_s.sort(arreglo8);
+        tiempo[8] = quicksort_s.sort(arreglo9);
+        tiempo[9] = quicksort_s.sort(arreglo10);
 
         suma = 0;
         long promQuick = 0;
